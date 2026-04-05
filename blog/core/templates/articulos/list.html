@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Artículos</h2>
+
+<a href="/articulos/nuevo/" class="btn btn-primary mb-3">Nuevo Artículo</a>
+
+<table class="table table-bordered">
+<tr>
+<th>Título</th>
+<th>Autor</th>
+<th>Fecha</th>
+</tr>
+
+{% for art in object_list %}
+<tr>
+<td>{{ art.titulo }}</td>
+<td>{{ art.autor.nombre }}</td>
+<td>{{ art.fecha_publicacion }}</td>
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
